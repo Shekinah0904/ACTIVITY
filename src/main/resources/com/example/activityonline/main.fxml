@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.activityonline.Controller"
+            prefWidth="650"
+            prefHeight="500">
+
+    <top>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <GridPane hgap="12" vgap="12">
+
+                <Label text="Enter Name:"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtName"
+                           prefWidth="250"
+                           promptText="Enter student name"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="1"/>
+
+
+                <Label text="Enter Course:"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtCourse"
+                           prefWidth="250"
+                           promptText="Enter course"
+                           GridPane.rowIndex="1"
+                           GridPane.columnIndex="1"/>
+
+
+                <Label text="Choose Year Level:"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="0"/>
+
+                <ChoiceBox fx:id="cbYear"
+                           prefWidth="250"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button text="Add Student" onAction="#addStudent"/>
+                <Button text="Update Student" onAction="#updateStudent"/>
+                <Button text="Delete Student" onAction="#deleteStudent"/>
+                <Button text="Clear" onAction="#clearFields"/>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="70"/>
+                <TableColumn fx:id="colName" text="Name" prefWidth="220"/>
+                <TableColumn fx:id="colCourse" text="Course" prefWidth="220"/>
+                <TableColumn fx:id="colYear" text="Year Level" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
